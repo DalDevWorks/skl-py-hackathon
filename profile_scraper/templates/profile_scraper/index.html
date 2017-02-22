@@ -1,1 +1,10 @@
-<h1>Test</h1>
+<h1>Twitter Profile Scraper</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="" method="post">
+{% csrf_token %}
+    <label for="handle">Search for Twitter User based on Twitter handle</label>
+    <input type="text" name="handle" id="handle">
+    <input type="submit" value="Search">
+</form>
