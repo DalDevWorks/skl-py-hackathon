@@ -7,7 +7,6 @@
 *.log
 *.pot
 *.pyc
-profile_scraper/migrations/__init__.pyc
 __pycache__/
 __init__.pyc
 ocal_settings.py
