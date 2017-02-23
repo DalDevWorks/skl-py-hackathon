@@ -10,6 +10,7 @@ from stop_words import get_stop_words
 from string import maketrans
 
 stop_words = get_stop_words('english')
+custom_stop_words = ['https', 'http']
 
 
 def remove_punctuation(line):
@@ -51,6 +52,7 @@ def text_preprocessor(in_string):
 
     for w in tokenized:
         if len(w) > 2:
-            processed_line += w + " "
+            if w not in custom_stop_words:
+                processed_line += w + " "
 
     return processed_line

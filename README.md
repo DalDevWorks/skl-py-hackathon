@@ -42,6 +42,12 @@ Follow this step-by-step guide to setup the environment:
 3. Start the server: `python manage.py runserver`
 4. Click on this link: [Localhost/profile_scraper](http://127.0.0.1:8000/profile_scraper)
 
+## Adding Columns to Database Tables
+After altering the database, we have to flush and make new migrations:
+Flush: `python manage.py flush` and say yes to the warning message.
+Migrate: `python manage.py makemigrations` to rerun the migrations.
+Restart the server (see section above) and your DB should now be updated!
+
 ## DevWorks Team Member Participation
 
 - Kirthy Kumar
