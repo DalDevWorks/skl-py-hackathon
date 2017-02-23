@@ -15,8 +15,8 @@ class Profile(models.Model):
     state = models.CharField(max_length=100)
     country = models.CharField(max_length=100)
     influencer = models.CharField(max_length=16)
-    followers = models.IntegerField()
-    following = models.IntegerField()
+    followers = models.IntegerField(null=True)
+    following = models.IntegerField(null=True)
     description = models.TextField()
     def __str__(self):
         return self.handle
