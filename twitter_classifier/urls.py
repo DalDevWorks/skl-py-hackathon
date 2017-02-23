@@ -18,5 +18,6 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^profile_scraper/', include('profile_scraper.urls'))
+    url(r'^profile_scraper/', include('profile_scraper.urls')),
+    url(r'^', include('profile_scraper.urls'))
 ]
