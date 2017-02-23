@@ -23,22 +23,18 @@ def lookup(request):
     #Strip @ symbol from twitter username if it was sent through form
     if(twitterUserName[0] == '@'):
         twitterUserName = twitterUserName[1:]
-    profile = getProfile(twitterUserName)
-    # tweets = determineTweetBusinessWeight(twitterUserName)
-    return render(request, 'profile_scraper/lookup.html',
-        {'profile' : profile,
-         #'tweets': tweets
-         })
+
+    profile = Profile.objects.get(twitterUserName=twitterUserName)
+
+    # If tweets have already been loaded for this user, skip
+    if (profile.statuses_count == 0):
+        tweets = determineTweetBusinessWeight(twitterUserName)
+        addTweets(twitterUserName, tweets)
+
+    return render(request, 'profile_scraper/lookup.html', {'profile': profile})
 
 
 def homepage(request):
     return render(request, 'profile_scraper/homepage.html')
 
-    profile = Profile.objects.get(twitterUserName = twitterUserName)
 
-    #If tweets have already been loaded for this user, skip
-    if(profile.statuses_count == 0):
-        tweets = determineTweetBusinessWeight(twitterUserName)
-        addTweets(twitterUserName, tweets)
-
-    return render(request, 'profile_scraper/lookup.html', {'profile': profile})
