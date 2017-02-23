@@ -26,7 +26,7 @@ Follow this step-by-step guide to setup the environment:
 1. Setup your development directory, e.g. `/dev/hackathons/shiftkey-py`, and `cd` into this directory.
 2. Clone this repository: `git clone https://github.com/DalDevWorks/skl-py-hackathon.git`
 3. `cd skl-py-hackathon`
-4. `pip install Django`
+4. `pip install django`
 5. `pip install tweepy`
 6. `pip install stop_words`
 
