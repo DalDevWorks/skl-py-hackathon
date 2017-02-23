@@ -9,7 +9,8 @@ from django.urls import reverse
 Index displays form to enter a twitter handle
 """
 def index(request):
-    return render(request, 'profile_scraper/index.html')
+    users = Profile.objects.all()
+    return render(request, 'profile_scraper/index.html', {'users' : users})
 
 """
 Lookup takes a post request from index.html and parses the twitter handle from the form
