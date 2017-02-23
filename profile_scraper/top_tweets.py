@@ -11,7 +11,7 @@ def get_top_business_terms(user_tweets):
         if tweet['isBusiness'] > 0:
             businessTweets.append(tweet['processed_tweet'])
 
-    main(businessTweets, 1.0, True, "business_results.txt", 10, 10, 3)
+    main(businessTweets, 0.5, True, "business_results.txt", 5, 5, 3)
 
     business_file = open('business_results.txt', 'r')
     business_term_list = business_file.readlines()
@@ -33,7 +33,7 @@ def get_top_personal_terms(user_tweets):
         if tweet['isBusiness'] == 0:
             personalTweets.append(tweet['processed_tweet'])
 
-    main(personalTweets, 1.0, True, "personal_results.txt", 10, 10, 3)
+    main(personalTweets, 0.5, True, "personal_results.txt", 5, 5, 3)
 
     personal_file = open('personal_results.txt', 'r')
     personal_term_list = personal_file.readlines()
