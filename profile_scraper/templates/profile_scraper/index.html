@@ -81,7 +81,7 @@
         <h1>Twitter Classifier</h1>
         <p>We classify tweets from a given Twitter user in two types business and non-business. We take information
             available through a LeadSift database CSV dump to generate a list of user  candidates. From this list of
-            candidates we use text pre-processing (punctuation, digits and stopwords) and a weighting algorithm to
+            candidates we use text pre-processing (punctuation, digits and stop words) and a weighting algorithm to
             qualify tweets.
         </p>
       </div>
@@ -99,7 +99,7 @@
               {% csrf_token %}
               <div class="form-group">
                 <label for="handle">Search</label>
-                <input type="text" name="twitterUserName" id="twitterUserName" class="form-control">
+                <input type="text" name="twitterUserName" id="twitterUserName" class="form-control input-lg">
               </div>
               <button type="submit" value="Search" class="btn btn-lg btn-primary">Submit</button>
             </form>
