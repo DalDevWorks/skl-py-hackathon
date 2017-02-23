@@ -20,7 +20,7 @@ def determineTweetBusinessWeight(twitter_user):
 
     #loop over each tweet and determine what type of tweet it is:
     for tweet in allTweets:
-        processed_tweet = text_preprocessor(tweet)
+        processed_tweet = text_preprocessor(tweet['tweet'])
         company_weight = businessWeight(company, processed_tweet, weight_company)
         jobTitle_weight = businessWeight(jobTitle, processed_tweet, weight_jobTitle)
         industry_weight = businessWeight(industry, processed_tweet, weight_industry)
