@@ -11,9 +11,9 @@ def determineTweetBusinessWeight(twitter_user):
     # get user data from the DB:
     user = Profile.objects.get(twitterUserName = twitter_user)
 
-    company = user['company']
-    jobTitle = user['jobTitle']
-    industry = user['cdIndustry']
+    company = user.company
+    jobTitle = user.jobTitle
+    industry = user.cdIndustry
 
     #get all tweetData:
     allTweets = get_all_tweets(twitter_user)
