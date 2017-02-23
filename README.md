@@ -22,7 +22,7 @@ We classify tweets from a given Twitter user in two types: `business` and `non-b
 ## Setup and Installation Guide
 This project uses Python 2.7. Make sure you have this version of Python installed, or use a VM (we recommend virtualenv) with Python 2.7 installed.
 
-Follow this step-by-step guide to setup the environment:
+Follow this step-by-step guide to setup the environment (for MacOS X):
 
 1. Install Virtualenv: `sudo pip install virtualenv`
 2. Create a directory for the virtual environment: `cd ~/` and `mkdir envs`
