@@ -44,9 +44,10 @@ Follow this step-by-step guide to setup the environment:
 
 ## Adding Columns to Database Tables
 After altering the database, we have to flush and make new migrations:
-Flush: `python manage.py flush` and say yes to the warning message.
-Migrate: `python manage.py makemigrations` to rerun the migrations.
-Restart the server (see section above) and your DB should now be updated!
+
+- Flush: `python manage.py flush` and say yes to the warning message.
+- Migrate: `python manage.py makemigrations` to rerun the migrations.
+- Restart the server (see section above) and your DB should now be updated!
 
 ## DevWorks Team Member Participation
 
