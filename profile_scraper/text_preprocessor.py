@@ -36,8 +36,16 @@ def remove_stopwords(line):
 def text_preprocessor(in_string):
 
     lower_line = in_string.lower()
+    no_stop_words = remove_stopwords(lower_line)
     nopunc_line = remove_punctuation(lower_line)
     nonum_line = remove_numbers(nopunc_line)
-    processed_line = remove_stopwords(nonum_line)
+
+    processed_line = ""
+
+    tokenized = nonum_line.split()
+
+    for w in tokenized:
+        if len(w) > 2:
+            processed_line += w + " "
 
     return processed_line
