@@ -40,7 +40,7 @@ Follow this step-by-step guide to setup the environment:
 1. Make sure you are in the app directory, e.g: `cd dev/hackathons/skl-py-hackathon`
 2. Run the DB migrations if you haven't already done so: `python manage.py migrate`
 3. Start the server: `python manage.py runserver`
-4. Go to your favourite browser and enter this link: `127.0.0.1:8000/`
+4. Click on this link: [Localhost](http://127.0.0.1:8000/)
 
 ## DevWorks Team Member Participation
 
