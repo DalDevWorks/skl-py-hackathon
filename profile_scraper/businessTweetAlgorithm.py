@@ -1,14 +1,16 @@
 from twitterQueries import get_all_tweets
 from text_preprocessor import text_preprocessor
-#from models import profiles
+from models import Profile
 
 def determineTweetBusinessWeight(twitter_user):
 
+    user = Profile.objects.get(twitterUserName = twitter_user)
+
     #TODO: get user data from the DB:
     userData = {}
-    userData['businessName'] = ""
-    userData['jobTitle'] = ""
-    userData['industry'] = ""
+    userData['company'] = user['company']
+    userData['jobTitle'] = user['jobTitle']
+    userData['industry'] = user['cdIndustry']
 
     #TODO: pre-process the CSV data
 
@@ -22,5 +24,3 @@ def determineTweetBusinessWeight(twitter_user):
         tweet['isBusiness'] = ""
 
     return allTweets
-
-
