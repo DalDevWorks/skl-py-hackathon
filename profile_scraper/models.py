@@ -23,11 +23,11 @@ class Profile(models.Model):
     ngrams = models.CharField(max_length=10, null=True)
     statuses_count = models.IntegerField(default=0)
     influencer = models.BooleanField(default=False)
-    followers_count = models.IntegerField(null=True)
-    following_count = models.IntegerField(null=True)
+    followers_count = models.IntegerField(default=0)
+    following_count = models.IntegerField(default=0)
     description = models.TextField()
-    friends_count = models.IntegerField()
-    profile_image_url = models.URLField()
+    friends_count = models.IntegerField(default=0)
+    profile_image_url = models.URLField(default="")
 
     def __str__(self):
         return self.twitterUserName

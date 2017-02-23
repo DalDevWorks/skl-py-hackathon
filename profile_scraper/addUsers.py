@@ -27,6 +27,6 @@ def addUsers(file):
                 hqCity=row[14],
                 hqState=row[15],
                 hqCountry=row[16],
-                numTweets=0
+                statuses_count=0
             )
             user.save()
