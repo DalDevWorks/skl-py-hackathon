@@ -1,3 +1,4 @@
+# coding=utf8
 from __future__ import unicode_literals
 from datetime import datetime
 from django.db import models
@@ -23,6 +24,7 @@ class Profile(models.Model):
     hqCity = models.CharField(max_length=20, null=True)
     hqState = models.CharField(max_length=20, null=True)
     hqCountry = models.CharField(max_length=20, null=True)
+    ngrams = models.CharField(max_length=10, null=True)
 
     def __str__(self):
         return self.twitterUserName
