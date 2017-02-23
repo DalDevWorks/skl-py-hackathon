@@ -27,3 +27,7 @@ def lookup(request):
         {'profile' : profile,
          #'tweets': tweets
          })
+
+
+def homepage(request):
+    return render(request, 'profile_scraper/homepage.html')
