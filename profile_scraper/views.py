@@ -22,18 +22,8 @@ def lookup(request):
     if(twitterUserName[0] == '@'):
         twitterUserName = twitterUserName[1:]
     profile = getProfile(twitterUserName)
-    name = profile.name
-    profileImg = profile.profile_image_url
-    desc = profile.description
-    numTweets = profile.statuses_count
-    numFollowers = profile.followers_count
-    numFollowing = profile.friends_count
-    tweets = determineTweetBusinessWeight(twitterUserName)
+    # tweets = determineTweetBusinessWeight(twitterUserName)
     return render(request, 'profile_scraper/lookup.html',
-        {'name': name,
-          'desc': desc,
-          'profileImg': profileImg,
-          'numTweets': numTweets,
-          'numFollowers': numFollowers,
-          'numFollowing': numFollowing,
-         'tweets': tweets})
+        {'profile' : profile,
+         #'tweets': tweets
+         })
