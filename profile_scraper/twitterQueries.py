@@ -43,13 +43,14 @@ def get_all_tweets(screen_name):
     outtweets = [[tweet.id_str, tweet.text.encode("utf-8")] for tweet in alltweets]
 
     tweetData = []
-    data = {}
 
     for tweet in outtweets:
+        data = {}
         data['id'] = tweet[0]
         data['tweet'] = tweet[1]
         data['isBusiness'] = 'false'
-        json_data = json.dumps(data)
-        tweetData.append(json_data)
+        tweetData.append(data)
+
+    # You can access tweetData with tweetData[1]['tweet']
 
     return tweetData
