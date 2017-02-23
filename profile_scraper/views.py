@@ -24,11 +24,17 @@ def lookup(request):
     if(twitterUserName[0] == '@'):
         twitterUserName = twitterUserName[1:]
 
-    profile = Profile.objects.get(twitterUserName = twitterUserName)
+    profile = Profile.objects.get(twitterUserName=twitterUserName)
 
-    #If tweets have already been loaded for this user, skip
-    if(profile.statuses_count == 0):
+    # If tweets have already been loaded for this user, skip
+    if (profile.statuses_count == 0):
         tweets = determineTweetBusinessWeight(twitterUserName)
         addTweets(twitterUserName, tweets)
 
     return render(request, 'profile_scraper/lookup.html', {'profile': profile})
+
+
+def homepage(request):
+    return render(request, 'profile_scraper/homepage.html')
+
+
