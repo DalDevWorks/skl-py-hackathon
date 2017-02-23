@@ -5,7 +5,6 @@ from django.db import models
 
 class Profile(models.Model):
     twitterSource = models.CharField(max_length=100, unique=True)
-    twitterUserName = models.CharField(max_length=100, unique=True, default="No Handle Entered: " + str(datetime.now()))
     firstName = models.CharField(max_length=50)
     lastName = models.CharField(max_length=50)
     domain = models.CharField(max_length=100)
@@ -14,18 +13,21 @@ class Profile(models.Model):
     city = models.CharField(max_length=100)
     state = models.CharField(max_length=100)
     country = models.CharField(max_length=100)
-    influencer = models.CharField(max_length=16)
-    followers = models.IntegerField(null=True)
-    following = models.IntegerField(null=True)
-    description = models.TextField()
     linkedin = models.CharField(max_length=100, null=True, blank=False)
     cdSize = models.CharField(max_length=40, null=True)
     cdIndustry = models.CharField(max_length=40, null=True)
     hqCity = models.CharField(max_length=20, null=True)
     hqState = models.CharField(max_length=20, null=True)
     hqCountry = models.CharField(max_length=20, null=True)
+    twitterUserName = models.CharField(max_length=100, unique=True, default="No Handle Entered: " + str(datetime.now()))
     ngrams = models.CharField(max_length=10, null=True)
-    numTweets = models.CharField(max_length=10, null=True)
+    statuses_count = models.IntegerField(default=0)
+    influencer = models.BooleanField(default=False)
+    followers_count = models.IntegerField(default=0)
+    following_count = models.IntegerField(default=0)
+    description = models.TextField()
+    friends_count = models.IntegerField(default=0)
+    profile_image_url = models.URLField(default="")
 
     def __str__(self):
         return self.twitterUserName
@@ -36,3 +38,7 @@ class Tweet(models.Model):
     tweetRawText = models.CharField(max_length=140)
     tweetProcText = models.CharField(max_length=140)
     isBusiness = models.FloatField()
+
+    def __str__(self):
+        return self.tweetId
+

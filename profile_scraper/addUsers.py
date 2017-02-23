@@ -1,8 +1,10 @@
 import csv
 from .models import Profile
 
-
-def readCSV(file):
+"""
+Takes in csv file and builds users
+"""
+def addUsers(file):
     # Open and read info from local csv file.
     with open(file, "rb") as csvfile:
         next(csvfile)
@@ -25,5 +27,6 @@ def readCSV(file):
                 hqCity=row[14],
                 hqState=row[15],
                 hqCountry=row[16],
+                statuses_count=0
             )
             user.save()
