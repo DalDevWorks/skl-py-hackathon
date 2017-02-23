@@ -17,7 +17,7 @@ class Profile(models.Model):
     followers = models.IntegerField(null=True)
     following = models.IntegerField(null=True)
     description = models.TextField()
-    linkedin = models.CharField(max_length=100, unique=True, null=True)
+    linkedin = models.CharField(max_length=100, null=True, blank=False)
     cdSize = models.CharField(max_length=40, null=True)
     cdIndustry = models.CharField(max_length=40, null=True)
     hqCity = models.CharField(max_length=20, null=True)
