@@ -58,11 +58,11 @@
             <p class="text-center">
                 Search from the available users' Twitter handle to generate the classifier.
             </p>
-            <form action="/profile_scraper/lookup.html" method="post">
+            <form action="{% url 'profile_scraper:lookup' %}" method="post">
               {% csrf_token %}
               <div class="form-group">
                 <label for="handle">Search</label>
-                <input type="text" class="form-control" name="handle" id="handle" value="{{ profile.screen_name }}">
+                <input type="text" name="twitterUserName" id="twitterUserName" class="form-control">
               </div>
               <button type="submit" value="Search" class="btn btn-lg btn-primary">Submit</button>
             </form>
