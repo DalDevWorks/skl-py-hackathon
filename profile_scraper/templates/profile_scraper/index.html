@@ -1,8 +1,8 @@
 <h1>Twitter Profile Scraper</h1>
 
-<form action="/profile_scraper/lookup.html" method="post">
+<form action="{% url 'profile_scraper:lookup' %}" method="post">
     {% csrf_token %}
-    <label for="handle">Search for Twitter User based on Twitter handle</label>
-    <input type="text" name="handle" id="handle" value="{{ profile.screen_name }}">
+    <label for="twitterUserName">Search for Twitter User based on Twitter handle</label>
+    <input type="text" name="twitterUserName" id="twitterUserName">
     <input type="submit" value="Search">
 </form>
