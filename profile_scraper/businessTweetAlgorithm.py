@@ -11,9 +11,9 @@ def determineTweetBusinessWeight(twitter_user):
     # get user data from the DB:
     user = Profile.objects.get(twitterUserName = twitter_user)
 
-    company = user['company']
-    jobTitle = user['jobTitle']
-    industry = user['cdIndustry']
+    company = user.company
+    jobTitle = user.jobTitle
+    industry = user.cdIndustry
 
     #get all tweetData:
     allTweets = get_all_tweets(twitter_user)
@@ -33,15 +33,16 @@ def determineTweetBusinessWeight(twitter_user):
 
 def businessWeight( term, processed_tweet, total_weight_value ):
 
-    query_terms = text_preprocessor(term)
-
-    tokenized = query_terms.split()
-    query_weight = total_weight_value / len(tokenized)
-
     total_weight = 0
 
-    for word in tokenized:
-        if word in processed_tweet:
-            total_weight += query_weight
+    if len(term) > 0:
+        query_terms = text_preprocessor(term)
+
+        tokenized = query_terms.split()
+        query_weight = total_weight_value / len(tokenized)
+
+        for word in tokenized:
+            if word in processed_tweet:
+                total_weight += query_weight
 
     return total_weight
