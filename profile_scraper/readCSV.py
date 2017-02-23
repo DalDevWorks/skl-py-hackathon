@@ -5,8 +5,8 @@ from .models import Profile
 def readCSV(file):
     # Open and read info from local csv file.
     with open(file, "rb") as csvfile:
+        next(csvfile)
         reader = csv.reader(csvfile)
-
         for row in reader:
             user = Profile(
                 twitterUserName=row[0].rsplit('/', 1)[-1],
