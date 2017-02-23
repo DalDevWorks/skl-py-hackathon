@@ -11,17 +11,20 @@ from string import maketrans
 
 stop_words = get_stop_words('english')
 
+
 def remove_punctuation(line):
     in_chars = string.punctuation
     out_char = "                                "
     translate_line = maketrans(in_chars, out_char)
     return line.translate(translate_line)
 
+
 def remove_numbers(line):
     in_chars = string.digits
     out_char = "          "
     translate_line = maketrans(in_chars, out_char)
     return line.translate(translate_line)
+
 
 def remove_stopwords(line):
     tokenized = line.split()
@@ -32,6 +35,7 @@ def remove_stopwords(line):
             filtered_sentence += w + " "
 
     return filtered_sentence
+
 
 def text_preprocessor(in_string):
 

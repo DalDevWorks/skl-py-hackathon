@@ -1,13 +1,13 @@
 #!/usr/bin/python
 
 import tweepy
-import json
 
 # Twitter API credentials
 consumer_key = "voX3ehOFjwgAVmFSa1s8xSwif"
 consumer_secret = "1UiPMzPjNqSXGH3UVhoOnS7FOnunO2LeNRAg5Koih2YLQJercb"
 access_key = "135690860-gbiRRkjxvci1lyOjww2ROZeWtCk0dfeOzUMiVtB9"
 access_secret = "zWkXZxYkxfYWspubIVj5PeT8r53di1bBf75M6pjT74BUt"
+
 
 def getProfile(handle):
 
@@ -48,7 +48,6 @@ def get_all_tweets(screen_name):
         data = {}
         data['id'] = tweet[0]
         data['tweet'] = tweet[1]
-        data['isBusiness'] = 'false'
         tweetData.append(data)
 
     # You can access tweetData with tweetData[1]['tweet']
