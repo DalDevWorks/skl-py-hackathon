@@ -2,7 +2,7 @@ from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import Profile
 #from profile_scraper.getProfile import getProfile
-from profile_scraper.getTwitterProfile import getProfile
+from profile_scraper.twitterQueries import *
 from django.urls import reverse
 
 """
