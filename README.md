@@ -1,3 +1,4 @@
+![DevWorks](https://github.com/DalDevWorks/skl-py-hackathon/blob/master/devworklogo.png)
 # skl-py-hackathon
 DevWorks participated in [LeadSift's hackathon hosted by Shiftkey Labs](http://shiftkeylabs.ca/calendar/shiftkey-py-hackathon/) on Feb 22nd - Feb 24th 2017. 
 
@@ -23,24 +24,33 @@ This project uses Python 2.7. Make sure you have this version of Python installe
 
 Follow this step-by-step guide to setup the environment:
 
-1. Setup your development directory, e.g. `/dev/hackathons/shiftkey-py`, and `cd` into this directory.
-2. Clone this repository: `git clone https://github.com/DalDevWorks/skl-py-hackathon.git`
-3. `cd skl-py-hackathon`
-4. `pip install django`
-5. `pip install tweepy`
-6. `pip install stop_words`
+1. Install Virtualenv: `sudo pip install virtualenv`
+2. Create a directory for the virtual environment: `cd ~/` and `mkdir envs`
+3. Create the hackathon virtual environment: `virtualenv —-system-site-packages ~/envs/skl-py-hackathon` (sometimes there is an issue when copying and pasting this command. It works when typing it manually. Remember the double dashes.)
+4. Before doing any development, enter the virtual environment: `source ~/envs/reviewboard-3.0/bin/activate`. Optional: Create an alias for activating the VM: `vim .bash_profile` and add this `alias hack-skl-py='source ~/envs/skl-py-hackathon/bin/activate'`. You can now access the virtual environment from any directory by typing the command `hack-skl-py`.
+5. Setup your development directory, e.g. `/dev/hackathons/shiftkey-py`, and `cd` into this directory.
+6. Clone this repository: `git clone https://github.com/DalDevWorks/skl-py-hackathon.git`
+7. `cd skl-py-hackathon`
+8. `pip install django`
+9. `pip install tweepy`
+10. `pip install stop_words`
 
 ## Run the Server
 
-1. Enter the following command: `python manage.py runserver`
-2. Go to your favourite browser and enter this link: `127.0.0.1:8000/`
+1. Make sure you are in the app directory, e.g: `cd dev/hackathons/skl-py-hackathon`
+2. Run the DB migrations if you haven't already done so: `python manage.py migrate`
+3. Start the server: `python manage.py runserver`
+4. Click on this link: [Localhost/profile_scraper](http://127.0.0.1:8000/profile_scraper)
 
 ## DevWorks Team Member Participation
 
-- Kirthy
-- Eric
-- Duncan
-- Connor
-- Sam
-- Orjan
-- Chaoran
+- Kirthy Kumar
+- Eric Desjardins
+- Duncan Pulsifer
+- Connor Walsh
+- Samyse Jawich
+- Orjan Monsen
+- Chaoran Zhou
+
+## Guest Member Participation
+- Dylan Seitz
