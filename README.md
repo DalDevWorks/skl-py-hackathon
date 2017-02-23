@@ -56,7 +56,7 @@ After altering the database, we have to flush and make new migrations:
 - Duncan Pulsifer
 - Connor Walsh
 - Sam Jawich
-- Orjan Monsen
+- Ørjan Monsen
 - Chaoran Zhou
 
 ## Guest Member Participation
