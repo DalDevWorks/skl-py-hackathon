@@ -45,5 +45,3 @@ def get_top_personal_terms(user_tweets):
     top_terms.append(personal_term_list)
 
     return top_terms
-
-terms_list = get_top_business_terms(determineTweetBusinessWeight())
