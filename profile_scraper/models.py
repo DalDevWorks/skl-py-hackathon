@@ -25,6 +25,15 @@ class Profile(models.Model):
     hqState = models.CharField(max_length=20, null=True)
     hqCountry = models.CharField(max_length=20, null=True)
     ngrams = models.CharField(max_length=10, null=True)
+	numTweets = models.CharField(max_length=10, null=True)
 
     def __str__(self):
         return self.twitterUserName
+
+class Tweet(models.Model):
+	profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
+	tweetId = models.CharField(max_length=100)
+	tweetRawText = models.CharField(max_length=140)
+	tweetProcText = models.CharField(max_length=140)
+	isBusiness = models.FloatField()
+	
