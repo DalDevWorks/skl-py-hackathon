@@ -18,4 +18,15 @@ Uses getProfile() to return a twitter profile object
 def lookup(request):
     profile = getProfile(request.POST['handle'])
     name = profile.name
-    return render(request, 'profile_scraper/lookup.html', {'name': name})
+    profileImg = profile.profile_image_url
+    desc = profile.description
+    numTweets = profile.statuses_count
+    numFollowers = profile.followers_count
+    numFollowing = profile.friends_count
+    return render(request, 'profile_scraper/lookup.html',
+        {'name': name,
+          'desc': desc,
+          'profileImg': profileImg,
+          'numTweets': numTweets,
+          'numFollowers': numFollowers,
+          'numFollowing': numFollowing})
