@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from profile_scraper.twitterQueries import *
 from profile_scraper.readCSV import readCSV
+from profile_scraper.businessTweetAlgorithm import determineTweetBusinessWeight
 from .models import Profile
 
 """
@@ -17,17 +18,12 @@ Lookup takes a post request from index.html and parses the twitter handle from t
 Uses getProfile() to return a twitter profile object
 """
 def lookup(request):
-    profile = getProfile(request.POST['twitterUserName'])
-    name = profile.name
-    profileImg = profile.profile_image_url
-    desc = profile.description
-    numTweets = profile.statuses_count
-    numFollowers = profile.followers_count
-    numFollowing = profile.friends_count
+    twitterUserName = request.POST['twitterUserName']
+    if(twitterUserName[0] == '@'):
+        twitterUserName = twitterUserName[1:]
+    profile = getProfile(twitterUserName)
+    # tweets = determineTweetBusinessWeight(twitterUserName)
     return render(request, 'profile_scraper/lookup.html',
-        {'name': name,
-          'desc': desc,
-          'profileImg': profileImg,
-          'numTweets': numTweets,
-          'numFollowers': numFollowers,
-          'numFollowing': numFollowing})
+        {'profile' : profile,
+         #'tweets': tweets
+         })

@@ -14,6 +14,7 @@ custom_stop_words = ['https', 'http']
 
 
 def remove_punctuation(line):
+    line = str(line)
     in_chars = string.punctuation
     out_char = "                                "
     translate_line = maketrans(in_chars, out_char)
