@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import tweepy
+from .models import Profile
 
 # Twitter API credentials
 consumer_key = "voX3ehOFjwgAVmFSa1s8xSwif"
@@ -53,3 +54,20 @@ def get_all_tweets(screen_name):
     # You can access tweetData with tweetData[1]['tweet']
 
     return tweetData
+
+def buildProfile(screen_name):
+    user = Profile.objects.get(twitterUserName=screen_name)
+    twitter_profile = getProfile(screen_name)
+
+    user.description = twitter_profile.description
+    user.followers_count = twitter_profile.followers_count
+    user.following_count = twitter_profile.following
+    user.friends_count = twitter_profile.frinds_count
+    user.profile_image_url = twitter_profile.profile_image_url
+
+
+
+
+
+
+
