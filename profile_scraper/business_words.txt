@@ -1,0 +1,401 @@
+accounts payable 
+ap
+accounts receivable
+ar
+accrual based accounting
+accumulated depreciation
+acid test
+acquisition costs
+adaptive firm
+adventure capital
+advertising opportunity
+agent
+asset turnover
+assets
+back end
+benchmark
+brand
+brand equity
+brand extension strategy
+brand recognition
+break even analysis
+break even point
+broker
+bundling
+burden rate
+business mission
+business plan
+buy sell agreement
+c corporation 
+c corp
+compound average growth rate 
+cagr
+cannibalization
+capital assets
+capital expenditure
+capital input
+cash
+cash basis
+cash flow
+cash flow budget
+cash flow statement
+cash sales
+cash spending
+central driving forces model
+channel conflicts
+channels of distribution
+click through rate
+co branding
+cost of goods sold 
+cogs
+collection days
+collection period
+commission
+commissions percent
+community interest company 
+cic
+competitive advantage
+competitive analysis
+competitive entry wedges
+completed store transactions
+concentrated target marketing
+contribution
+contribution margin
+conversion rate
+core marketing strategy
+corporation
+corridor principal
+cost of sales
+cross elasticity of demand
+current assets
+current debt
+current liabilities
+doing business as 
+dba
+debt and equity
+depreciation
+differentiated target marketing
+differentiation
+direct cost of sales
+direct mail marketing
+direct marketing
+directory
+distinctive competency
+diversification
+dividends
+dual distribution
+early adopters
+early majority
+earnings
+earnings before interest and taxes
+ebit
+earnings before interest taxes depreciation and amortization 
+ebitda
+economies of scale
+effective demand
+effective tax rate
+entrepreneur in heat 
+eih
+entrepreneur
+equity
+equity financing
+evaluating ideas and opportunities
+everett rogers
+exclusive distribution
+expense
+experience curve
+features advantages and benifits 
+fab
+failure rule common causes
+failure rule exceptions to the rule
+fatal rule
+fighting brand strategy
+first mover
+first mover advantage
+first mover disadvantage
+fiscal year
+five forces model
+fixed cost
+fixed liabilities
+floating liabilities
+focus group
+forms of market research
+frequency marketing
+front end  websites 
+full cost price strategies
+future value projections
+goodwill
+gross margin
+gross margin percent
+guerrilla marketing investment strategy
+guerrilla marketing
+guerrilla marketing concept
+harvesting
+ideas vs  opportunities
+impressions
+income statement
+initial public offering
+ipo
+innovation evolutionary or revolutionary
+innovators
+intergrated marketing communications
+intensive distribution
+interest expense
+intraprenuership
+inventory
+inventory turnover
+inventory turns
+jobber
+labor
+laggards
+leveraged buy out 
+lbo
+liabilities
+life cycle
+limited  public company  aus 
+limited liability company 
+llc
+limited liability partnership
+long term assets
+long term interest rate
+long term liabilities
+loss
+loyalty programs
+manufacturers agent
+market
+market development funds
+market development strategy
+market evolution
+market penetration strategy
+market plan
+market redefinition
+market sales potential
+market segmentation
+market share
+market development strategy
+market penetration strategy
+marketing
+marketing audit
+marketing cost analysis
+marketing mix
+marketing plan
+materials
+materials included in cost of sales
+mission statement
+moving weighted average
+multiple channel system
+net cash flow
+net present value 
+npv
+net profit
+net profit margin before taxes
+net worth
+new visitors
+new brand strategy
+newsletter subscriptions
+not invented here 
+nih
+obligations incurred
+offering
+offering mix or portfolio
+on costs
+operating expenses
+operating leverage
+operations control
+opportunities vs  ideas
+opportunity analysis
+opportunity cost
+original equipment manufacturer 
+oem
+other short term liabilities
+outsourcing
+page views
+paid in capital
+partnership
+payables
+payback period
+payment days
+payment delay
+payroll
+payroll burden
+penetration pricing strategy
+perceived risk
+perceptual map
+personal selling
+pest analysis
+plant and equipment
+point of purchase advertising 
+pop
+portfolio
+positioning
+premiums
+price elasticity of demand
+privately owned
+pro forma income statement
+pro forma statements
+product definition
+product development
+product development strategy
+product life cycle 
+plc
+product line
+product line pricing
+profit
+profit before interest and taxes
+profit or loss
+proprietary private limited company
+public relations
+publicly traded
+pull communication strategy
+push communication strategy
+questionable costs
+receivables
+receivables turnover
+regional marketing
+relevant cost
+repositioning
+resource requirements
+websites
+retained earnings
+return on assets
+return on investment
+roi
+return on sales
+return visitors
+rich gumpert evaluation system
+s corporation 
+s corp
+sales break even
+sales forecast
+sales on credit
+scrambled merchandising
+seed capital
+selective distribution
+selling approaches
+senior corps of retired executives
+score
+shareholders
+short term
+short term assets
+short term notes
+short term liabilities
+simple linear regression
+situation analysis
+skimming pricing strategy
+slotting allowances
+small business investment council
+sbic
+sole proprietorship
+sole trader
+starting date
+stock
+stock market
+stock turnover
+strategic control
+strategic marketing management
+success factors
+success requirements
+sunk cost
+surplus or deficit
+switching costs
+swot analysis
+systematic innovation
+tactics
+target market
+target marketing
+tax rate percent
+taxes incurred
+telemarketing
+trade margin
+trading down
+trading up
+traffic
+types of entrepreneurs
+user interface 
+ui
+unique user sessions
+unit variable cost
+units break even
+unpaid expenses
+user benefits
+user registrations
+valuation
+value
+variable cost
+variance
+venture capitalists 
+vc
+venture capital
+website
+website metrics
+website traffic
+wholesaler
+working capital
+webinar
+seminar
+appointment
+management
+client
+commerce
+consolidate
+consumer
+contract
+signed
+deal
+corporate
+commercial
+fair
+trade
+globalize
+grow
+headquarters
+market
+interest
+ability
+cost
+account
+accommodation
+achieve
+acquire
+adapt
+agent
+advice
+alliance
+ambition
+approve
+boycott
+cancel
+candidate
+certified
+certification
+charge
+hire
+charter
+competent
+complimentary
+conduct
+demonstrate
+hiring
+need
+success
+opportunity
+require
+competition
+partner
+impact
+bleeding edge
+synergy
+thought leader
+corporate leader
+brand
+content
+incentivize
+competency
+context
+deliverable
+growth
+ideation
+innovat
+optimization
+lean in
+value

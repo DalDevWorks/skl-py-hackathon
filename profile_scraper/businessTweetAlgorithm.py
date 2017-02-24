@@ -1,10 +1,22 @@
+import os
 from twitterQueries import get_all_tweets
 from text_preprocessor import text_preprocessor
 from models import Profile
 
-weight_company = 1.0
-weight_jobTitle = 0.5
-weight_industry = 0.5
+def makeBusinessList():
+    pwd = os.path.dirname(__file__)
+    in_file = open(pwd + '/business_words.txt', 'r')
+    business_list = []
+    for line in in_file:
+        business_list.append(line.rstrip(' \r\n '))
+    return business_list
+
+business_words = makeBusinessList()
+
+weight_company = 5.0
+weight_jobTitle = 2.0
+weight_industry = 2.0
+
 
 def determineTweetBusinessWeight(twitter_user):
 
@@ -18,6 +30,10 @@ def determineTweetBusinessWeight(twitter_user):
     #get all tweetData:
     allTweets = get_all_tweets(twitter_user)
 
+    #initialize min and max term weights
+    min_weight = 100
+    max_weight = 0
+
     #loop over each tweet and determine what type of tweet it is:
     for tweet in allTweets:
         processed_tweet = text_preprocessor(tweet['tweet'])
@@ -25,8 +41,22 @@ def determineTweetBusinessWeight(twitter_user):
         jobTitle_weight = businessWeight(jobTitle, processed_tweet, weight_jobTitle)
         industry_weight = businessWeight(industry, processed_tweet, weight_industry)
 
-        tweet['isBusiness'] = company_weight + jobTitle_weight + industry_weight
+        business_term_weight = 0
+        for word in processed_tweet:
+            if word in business_words:
+                business_term_weight += 0.5
+
+        tweet_weight = company_weight + jobTitle_weight + industry_weight + business_term_weight
+        if tweet_weight < min_weight: min_weight = tweet_weight
+        if tweet_weight > max_weight: max_weight = tweet_weight
+
+        tweet['isBusiness'] = tweet_weight
         tweet['processed_tweet'] = processed_tweet
+
+    for tweet in allTweets:
+        orig_weight = tweet['isBusiness']
+        normalized_weight = (orig_weight - min_weight)/ (max_weight - min_weight)
+        tweet['isBusiness'] = normalized_weight
 
     return allTweets
 
@@ -39,7 +69,7 @@ def businessWeight( term, processed_tweet, total_weight_value ):
         query_terms = text_preprocessor(term)
 
         tokenized = query_terms.split()
-        query_weight = total_weight_value / len(tokenized)
+        query_weight = total_weight_value
 
         for word in tokenized:
             if word in processed_tweet:

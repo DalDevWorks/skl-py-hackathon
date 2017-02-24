@@ -32,9 +32,11 @@ def remove_stopwords(line):
     tokenized = line.split()
     filtered_sentence = ""
 
-    for w in tokenized:
-        if w not in stop_words:
-            filtered_sentence += w + " "
+    for word in tokenized:
+        if word in stop_words:
+            continue
+        else:
+            filtered_sentence += word + " "
 
     return filtered_sentence
 
