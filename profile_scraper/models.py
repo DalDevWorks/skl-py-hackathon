@@ -21,7 +21,7 @@ class Profile(models.Model):
     hqCountry = models.CharField(max_length=20, null=True)
     twitterUserName = models.CharField(max_length=100, unique=True, default="No Handle Entered: " + str(datetime.now()))
     ngrams = models.CharField(max_length=10, null=True)
-    statuses_count = models.IntegerField(default=0)
+    statuses_count = models.IntegerField()
     influencer = models.BooleanField(default=False)
     followers_count = models.IntegerField(default=0)
     following_count = models.IntegerField(default=0)

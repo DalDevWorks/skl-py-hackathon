@@ -4,7 +4,7 @@ Takes a twitterUserName and tweets object and converts them to Tweet models and 
 from .models import Profile
 def addTweets(twitterUserName, tweets):
     user = Profile.objects.get(twitterUserName=twitterUserName)
-    user.statuses_counts = len(tweets)
+    user.statuses_count = len(tweets)
     user.save()
     for tweet in tweets:
         t =user.tweet_set.create(tweetId = tweet['id'],

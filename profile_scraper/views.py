@@ -2,7 +2,9 @@ from django.shortcuts import render
 from profile_scraper.addUsers import addUsers
 from profile_scraper.businessTweetAlgorithm import determineTweetBusinessWeight
 from profile_scraper.processTweets import addTweets
+from profile_scraper.twitterQueries import buildProfile
 from .models import Profile
+
 
 """
 Index displays form to enter a twitter handle
@@ -30,6 +32,8 @@ def lookup(request):
     if (profile.statuses_count == 0):
         tweets = determineTweetBusinessWeight(twitterUserName)
         addTweets(twitterUserName, tweets)
+        buildProfile(twitterUserName)
+        profile = Profile.objects.get(twitterUserName=twitterUserName)
 
     return render(request, 'profile_scraper/lookup.html', {'profile': profile})
 

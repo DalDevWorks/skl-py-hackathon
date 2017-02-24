@@ -62,8 +62,9 @@ def buildProfile(screen_name):
     user.description = twitter_profile.description
     user.followers_count = twitter_profile.followers_count
     user.following_count = twitter_profile.following
-    user.friends_count = twitter_profile.frinds_count
+    user.friends_count = twitter_profile.friends_count
     user.profile_image_url = twitter_profile.profile_image_url
+    user.save()
 
 
 
