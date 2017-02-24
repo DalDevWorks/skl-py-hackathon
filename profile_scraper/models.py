@@ -28,6 +28,8 @@ class Profile(models.Model):
     description = models.TextField()
     friends_count = models.IntegerField(default=0)
     profile_image_url = models.URLField(default="")
+    topBusinessTerms = models.CharField(max_length=100, default="Thought Leadership,Businessing,Enterprise")
+    topPersonalTerms = models.CharField(max_length=100, default="Family,Vacation,Pets")
 
     def __str__(self):
         return self.twitterUserName
