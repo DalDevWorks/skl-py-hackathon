@@ -1,6 +1,10 @@
 .DS_Store
 .idea
 
+business_results.txt
+personal_results.txt
+
+
 # Created by https://www.gitignore.io/api/django,pycharm,macos
 
 ### Django ###
