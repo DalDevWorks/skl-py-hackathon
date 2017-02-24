@@ -32,16 +32,47 @@ def lookup(request):
     # If tweets have already been loaded for this user, skip
     if (profile.statuses_count == 0):
         tweets = determineTweetBusinessWeight(twitterUserName)
-        top_business = get_top_business_terms(tweets)
-        top_personal = get_top_personal_terms(tweets)
-        profile.topBusinessTerms = top_business
-        profile.topPersonalTerms = top_personal
+        get_top_business_terms(tweets)
+        get_top_personal_terms(tweets)
+
+        top_business = []
+        with open('business_results.txt', 'r') as b_top:
+            for i in range(3):
+                line, freq = b_top.next().rsplit('|')
+                top_business.append(line)
+                top_business.append(freq)
+
+        top_personal = []
+        with open('personal_results.txt', 'r') as p_top:
+            for i in range(3):
+                line, freq = p_top.next().rsplit('|')
+                top_personal.append(line)
+                top_personal.append(freq)
+
+        profile.topPersonalTerms = ','.join(top_personal)
+        profile.topBusinessTerms = ','.join(top_business)
         profile.save()
         addTweets(twitterUserName, tweets)
         buildProfile(twitterUserName)
         profile = Profile.objects.get(twitterUserName=twitterUserName)
 
-    return render(request, 'profile_scraper/lookup.html', {'profile': profile})
+    b1,bf1,b2,bf2,b3,bf3 = profile.topBusinessTerms.rsplit(',')
+    p1,pf1,p2,pf2,p3,pf3 = profile.topPersonalTerms.rsplit(',')
+
+    return render(request, 'profile_scraper/lookup.html', {'profile': profile,
+                                                           'b1': b1,
+                                                           'bf1':bf1,
+                                                           'b2': b2,
+                                                           'bf2':bf2,
+                                                           'b3':b3,
+                                                           'bf3':bf3,
+                                                           'p1':p1,
+                                                           'pf1':pf1,
+                                                           'p2':p2,
+                                                           'pf2':pf2,
+                                                           'p3':p3,
+                                                           'pf3':pf3
+                                                           })
 
 
 def homepage(request):
