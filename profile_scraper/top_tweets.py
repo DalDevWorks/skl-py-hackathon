@@ -15,10 +15,11 @@ def get_top_business_terms(user_tweets):
 
     business_file = open('business_results.txt', 'r')
     business_term_list = business_file.readlines()
+    '''
     for term in business_term_list:
         term = term.rstrip('\n').split('|')
         print term
-
+    '''
     top_terms = []
     top_terms.append(business_term_list)
 
@@ -37,9 +38,6 @@ def get_top_personal_terms(user_tweets):
 
     personal_file = open('personal_results.txt', 'r')
     personal_term_list = personal_file.readlines()
-    for term in personal_term_list:
-        term = term.rstrip('\n').split('|')
-        print term
 
     top_terms = []
     top_terms.append(personal_term_list)
