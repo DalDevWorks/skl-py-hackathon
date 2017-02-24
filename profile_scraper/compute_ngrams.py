@@ -29,7 +29,7 @@ def main(corpus_file, pvalue, use_perm, out_filename, min_count=5,
     """recursively find collocations for a given corpus.  writes out
     the marginal counts to a specified file"""
 
-    sys.stdout.write("computing n-grams from %s\n" % corpus_file)
+    #sys.stdout.write("computing n-grams from %s\n" % corpus_file)
 
     ### read corpus
     corpus = corpus_file

@@ -102,15 +102,16 @@ class Counts:
         for (cand, max_score) in [s for s in scores if s[1] > 0]:
             if (bigram_w[cand] < min): continue
             null_score = sig_test.null_score(marg_w, marg, total)
-            out('%-20s: marg = [%6d, %6d]; bigram = %5d;' %
-                ("%s %s" % (word, cand), marg_w, marg[cand], bigram_w[cand]))
-            out('val = %3.2e; null = %3.2e' % (max_score, null_score))
+            #out('%-20s: marg = [%6d, %6d]; bigram = %5d;' %
+            #    ("%s %s" % (word, cand), marg_w, marg[cand], bigram_w[cand]))
+            #out('val = %3.2e; null = %3.2e' % (max_score, null_score))
             if max_score <= null_score:
-                out(' rejected\n')
+                #out(' rejected\n')
+                continue
             else:
                 new_word = '%s %s' % (word, cand)
                 selected[new_word] = bigram_w[cand]
-                out(' selected *\n')
+                #out(' selected *\n')
             if recursive:
                 marg_w = marg_w - bigram_w[cand]
                 total = total - bigram_w[cand]
@@ -344,7 +345,7 @@ def sample_no_replace(total, table, nitems):
         for i in table:
             sum = sum + i[1]
             if (n < sum): return(i[0])
-        print(n)
+        #print(n)
         assert(False)
 
     sample = random.sample(xrange(total), nitems)
@@ -420,7 +421,7 @@ def nested_sig_bigrams(iter_generator, update_fun, sig_test, min):
     and a function to update the counts based on that iterator,
     """
 
-    sys.stdout.write("computing initial counts\n")
+    #sys.stdout.write("computing initial counts\n")
     counts = Counts()
     for doc in iter_generator(): update_fun(counts, doc)
     terms = [item[0] for item in
@@ -429,13 +430,13 @@ def nested_sig_bigrams(iter_generator, update_fun, sig_test, min):
     while (len(terms) > 0):
         new_vocab = {}
         sig_test.reset()
-        sys.stdout.write("analyzing %d terms\n" % len(terms))
+        #sys.stdout.write("analyzing %d terms\n" % len(terms))
         for v in terms:
             sig_bigrams = counts.sig_bigrams(v, sig_test, min)
             new_vocab.update(sig_bigrams)
 
         for selected in new_vocab.keys():
-            sys.stdout.write("bigram : %s\n" % selected)
+            #sys.stdout.write("bigram : %s\n" % selected)
             update_vocab(selected, counts.vocab)
 
         # reset counts
