@@ -32,7 +32,7 @@ _chi_sq_table = {0.1:2.70554345,
                  0.000001:23.92813,
                  0.0000001:28.37399}
 
-_stop_words = [v.strip() for v in file('stop_words.txt').readlines()]
+_stop_words = [v.strip() for v in file('profile_scraper/stop_words.txt').readlines()]
 
 # -------------------------------------------------------------------------
 

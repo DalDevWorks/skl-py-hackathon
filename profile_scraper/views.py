@@ -3,6 +3,7 @@ from profile_scraper.addUsers import addUsers
 from profile_scraper.businessTweetAlgorithm import determineTweetBusinessWeight
 from profile_scraper.processTweets import addTweets
 from profile_scraper.twitterQueries import buildProfile
+from top_tweets import get_top_business_terms, get_top_personal_terms
 from .models import Profile
 
 
@@ -31,6 +32,11 @@ def lookup(request):
     # If tweets have already been loaded for this user, skip
     if (profile.statuses_count == 0):
         tweets = determineTweetBusinessWeight(twitterUserName)
+        top_business = get_top_business_terms(tweets)
+        top_personal = get_top_personal_terms(tweets)
+        profile.topBusinessTerms = top_business
+        profile.topPersonalTerms = top_personal
+        profile.save()
         addTweets(twitterUserName, tweets)
         buildProfile(twitterUserName)
         profile = Profile.objects.get(twitterUserName=twitterUserName)
