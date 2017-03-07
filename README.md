@@ -27,7 +27,7 @@ Follow this step-by-step guide to setup the environment (for MacOS X):
 1. Install Virtualenv: `sudo pip install virtualenv`
 2. Create a directory for the virtual environment: `cd ~/` and `mkdir envs`
 3. Create the hackathon virtual environment: `virtualenv —-system-site-packages ~/envs/skl-py-hackathon` (sometimes there is an issue when copying and pasting this command. It works when typing it manually. Remember the double dashes.)
-4. Before doing any development, enter the virtual environment: `source ~/envs/reviewboard-3.0/bin/activate`. Optional: Create an alias for activating the VM: `vim .bash_profile` and add this `alias hack-skl-py='source ~/envs/skl-py-hackathon/bin/activate'`. You can now access the virtual environment from any directory by typing the command `hack-skl-py`.
+4. Before doing any development, enter the virtual environment: `source ~/envs/skl-py-hackathon/bin/activate`. Optional: Create an alias for activating the VM: `vim .bash_profile` and add this `alias hack-skl-py='source ~/envs/skl-py-hackathon/bin/activate'`. You can now access the virtual environment from any directory by typing the command `hack-skl-py`.
 5. Setup your development directory, e.g. `/dev/hackathons/shiftkey-py`, and `cd` into this directory.
 6. Clone this repository: `git clone https://github.com/DalDevWorks/skl-py-hackathon.git`
 7. `cd skl-py-hackathon`
